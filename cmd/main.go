@@ -1,11 +1,11 @@
-package cmd
+package main
 
 import(
 	"net/http"
-	"api"
+	"github.com/HugoDurand/MyDesignBoard/internal/api"
 )
 
 func main(){
-	http.HandleFunc("/", api.homeHandler)
+	http.HandleFunc("/", api.ResponseHandler)
 	http.ListenAndServe(":8080", nil)
 }

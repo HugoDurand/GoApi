@@ -9,7 +9,7 @@ type Response struct {
 	Content string
 }
 
-func responseHandler(w http.ResponseWriter, r *http.Request){
+func ResponseHandler(w http.ResponseWriter, r *http.Request){
 	responseContent := Response{"Ma reponse"}
 	resp, error := json.Marshal(responseContent)
 	if error != nil {
