@@ -2,7 +2,7 @@ package main
 
 import(
 	"net/http"
-	"github.com/HugoDurand/MyDesignBoard/internal/api"
+	"github.com/HugoDurand/MyDesignBoard/internal/search"
 )
 
 func main(){
