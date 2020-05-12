@@ -1,11 +1,11 @@
-package api
+package cmd
 
 import(
 	"net/http"
-	"./handler"
+	"api"
 )
 
 func main(){
-	http.HandleFunc("/", handler.homeHandler)
+	http.HandleFunc("/", api.homeHandler)
 	http.ListenAndServe(":8080", nil)
 }
