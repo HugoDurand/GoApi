@@ -1,8 +1,8 @@
-package main
+package api
 
 import(
 	"net/http"
-	"handler"
+	"./handler"
 )
 
 func main(){
