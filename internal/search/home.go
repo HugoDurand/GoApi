@@ -14,7 +14,7 @@ func getNotWorkingFirstContent(c chan []byte){
 	res, err := client.Get("https://stats.nba.com/stats/boxscore")
 	if err != nil {
 		close(c)
-		log.Print("Something went wrong getting other data")
+		log.Print("Something went wrong getting first data")
 		return
 	}
 	defer res.Body.Close()
@@ -22,7 +22,7 @@ func getNotWorkingFirstContent(c chan []byte){
 	print("First data")
         if err != nil {
             close(c)
-			log.Print("Something went wrong reading other data")
+			log.Print("Something went wrong reading first data")
 			return
         }
 	c <- contents
@@ -32,7 +32,7 @@ func getSecondContent(c chan []byte){
 	res, err := http.Get("https://restcountries.eu/rest/v2/all")
 	if err != nil {
 		close(c)
-		log.Print("Something went wrong getting other data")
+		log.Print("Something went wrong getting second data")
 		return
 	}
 	defer res.Body.Close()
@@ -40,7 +40,7 @@ func getSecondContent(c chan []byte){
 	print("Second data")
         if err != nil {
             close(c)
-			log.Print("Something went wrong reading other data")
+			log.Print("Something went wrong reading second data")
 			return
         }
 	c <- contents
@@ -50,7 +50,7 @@ func getThirdContent(c chan []byte){
 	res, err := http.Get("https://api.carbonintensity.org.uk/intensity")
 	if err != nil {
 		close(c)
-		log.Print("Something went wrong getting Behance data")
+		log.Print("Something went wrong getting third data")
 		return
 	}
 	defer res.Body.Close()
@@ -58,7 +58,7 @@ func getThirdContent(c chan []byte){
 	print("Third data")
         if err != nil {
 			close(c)
-			log.Print("Something went wrong reading Behance data")
+			log.Print("Something went wrong reading third data")
 			return
         }
 	c <- contents
